@@ -13,7 +13,6 @@
       margin: 0;
       padding: 40px 20px;
     }
-
     h1 {
       text-align: center;
       font-size: 2.5rem;
@@ -23,7 +22,6 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
-
     .gallery {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
@@ -31,7 +29,6 @@
       max-width: 1000px;
       margin: 0 auto;
     }
-
     .agent {
       background-color: #1c1c1c;
       padding: 15px;
@@ -40,23 +37,19 @@
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       box-shadow: 0 4px 8px rgba(255, 255, 255, 0.05);
     }
-
     .agent:hover {
       transform: translateY(-5px) scale(1.05);
       box-shadow: 0 8px 16px rgba(255, 255, 255, 0.15);
     }
-
     .agent img {
       width: 100px;
       border-radius: 10px;
     }
-
     .agent-name {
       margin-top: 10px;
       font-size: 0.95rem;
       font-weight: 600;
     }
-
     .download-btn {
       margin-top: 8px;
       background: linear-gradient(135deg, #ff416c, #ff4b2b);
@@ -68,7 +61,6 @@
       font-size: 0.8rem;
       transition: opacity 0.2s ease;
     }
-
     .download-btn:hover {
       opacity: 0.85;
     }
@@ -76,31 +68,35 @@
 </head>
 <body>
   <h1>VALORANT エージェントギャラリー</h1>
-  <div class="gallery" id="gallery"></div>
-
-  <script>
-    const agents = [
-      "KAY-O.png", "アイソ.png", "アストラ.png", "ヴァイス.png", "ヴァイパー.png", "ウェイレイ.png", "オーメン.png",
-      "キルジョイ.png", "クローヴ.png", "ゲッコー.png", "サイファー.png", "ジェット.PNG", "skye.png", "セージ.PNG",
-      "ソーヴァ.PNG", "チェンバー.png", "deadlock.png", "テホ.png", "ネオン.png", "ハーバー.png", "フェイド.png",
-      "フェニックス.png", "ブリーチ.PNG", "ブリムストーン.png", "ヨル.png", "レイズ.png", "レイナ.PNG"
-    ];
-
-    const gallery = document.getElementById("gallery");
-
-    agents.forEach((name) => {
-      const agentName = name.replace(/\.(png|PNG)$/i, "");
-      const div = document.createElement("div");
-      div.className = "agent";
-      div.innerHTML = `
-        <img src="${name}" alt="${agentName}" />
-        <div class="agent-name">${agentName}</div>
-        <a href="${name}" download>
-          <button class="download-btn">ダウンロード</button>
-        </a>
-      `;
-      gallery.appendChild(div);
-    });
-  </script>
+  <div class="gallery">
+    <!-- 画像を手動で記述 -->
+    <div class="agent"><img src="KAY-O.png" alt="KAY-O" /><div class="agent-name">KAY-O</div><a href="KAY-O.png" download><button class="download-btn">ダウンロード</button></a></div>
+    <div class="agent"><img src="アイソ.png" alt="アイソ" /><div class="agent-name">アイソ</div><a href="アイソ.png" download><button class="download-btn">ダウンロード</button></a></div>
+    <div class="agent"><img src="アストラ.png" alt="アストラ" /><div class="agent-name">アストラ</div><a href="アストラ.png" download><button class="download-btn">ダウンロード</button></a></div>
+    <div class="agent"><img src="ヴァイス.png" alt="ヴァイス" /><div class="agent-name">ヴァイス</div><a href="ヴァイス.png" download><button class="download-btn">ダウンロード</button></a></div>
+    <div class="agent"><img src="ヴァイパー.png" alt="ヴァイパー" /><div class="agent-name">ヴァイパー</div><a href="ヴァイパー.png" download><button class="download-btn">ダウンロード</button></a></div>
+    <div class="agent"><img src="ウェイレイ.png" alt="ウェイレイ" /><div class="agent-name">ウェイレイ</div><a href="ウェイレイ.png" download><button class="download-btn">ダウンロード</button></a></div>
+    <div class="agent"><img src="オーメン.png" alt="オーメン" /><div class="agent-name">オーメン</div><a href="オーメン.png" download><button class="download-btn">ダウンロード</button></a></div>
+    <div class="agent"><img src="キルジョイ.png" alt="キルジョイ" /><div class="agent-name">キルジョイ</div><a href="キルジョイ.png" download><button class="download-btn">ダウンロード</button></a></div>
+    <div class="agent"><img src="クローヴ.png" alt="クローヴ" /><div class="agent-name">クローヴ</div><a href="クローヴ.png" download><button class="download-btn">ダウンロード</button></a></div>
+    <div class="agent"><img src="ゲッコー.png" alt="ゲッコー" /><div class="agent-name">ゲッコー</div><a href="ゲッコー.png" download><button class="download-btn">ダウンロード</button></a></div>
+    <div class="agent"><img src="サイファー.png" alt="サイファー" /><div class="agent-name">サイファー</div><a href="サイファー.png" download><button class="download-btn">ダウンロード</button></a></div>
+    <div class="agent"><img src="ジェット.PNG" alt="ジェット" /><div class="agent-name">ジェット</div><a href="ジェット.PNG" download><button class="download-btn">ダウンロード</button></a></div>
+    <div class="agent"><img src="スカイ.png" alt="スカイ" /><div class="agent-name">スカイ</div><a href="スカイ.png" download><button class="download-btn">ダウンロード</button></a></div>
+    <div class="agent"><img src="セージ.PNG" alt="セージ" /><div class="agent-name">セージ</div><a href="セージ.PNG" download><button class="download-btn">ダウンロード</button></a></div>
+    <div class="agent"><img src="ソーヴァ.PNG" alt="ソーヴァ" /><div class="agent-name">ソーヴァ</div><a href="ソーヴァ.PNG" download><button class="download-btn">ダウンロード</button></a></div>
+    <div class="agent"><img src="チェンバー.png" alt="チェンバー" /><div class="agent-name">チェンバー</div><a href="チェンバー.png" download><button class="download-btn">ダウンロード</button></a></div>
+    <div class="agent"><img src="デッドロック.png" alt="デッドロック" /><div class="agent-name">デッドロック</div><a href="デッドロック.png" download><button class="download-btn">ダウンロード</button></a></div>
+    <div class="agent"><img src="テホ.png" alt="テホ" /><div class="agent-name">テホ</div><a href="テホ.png" download><button class="download-btn">ダウンロード</button></a></div>
+    <div class="agent"><img src="ネオン.png" alt="ネオン" /><div class="agent-name">ネオン</div><a href="ネオン.png" download><button class="download-btn">ダウンロード</button></a></div>
+    <div class="agent"><img src="ハーバー.png" alt="ハーバー" /><div class="agent-name">ハーバー</div><a href="ハーバー.png" download><button class="download-btn">ダウンロード</button></a></div>
+    <div class="agent"><img src="フェイド.png" alt="フェイド" /><div class="agent-name">フェイド</div><a href="フェイド.png" download><button class="download-btn">ダウンロード</button></a></div>
+    <div class="agent"><img src="フェニックス.png" alt="フェニックス" /><div class="agent-name">フェニックス</div><a href="フェニックス.png" download><button class="download-btn">ダウンロード</button></a></div>
+    <div class="agent"><img src="ブリーチ.PNG" alt="ブリーチ" /><div class="agent-name">ブリーチ</div><a href="ブリーチ.PNG" download><button class="download-btn">ダウンロード</button></a></div>
+    <div class="agent"><img src="ブリムストーン.png" alt="ブリムストーン" /><div class="agent-name">ブリムストーン</div><a href="ブリムストーン.png" download><button class="download-btn">ダウンロード</button></a></div>
+    <div class="agent"><img src="ヨル.png" alt="ヨル" /><div class="agent-name">ヨル</div><a href="ヨル.png" download><button class="download-btn">ダウンロード</button></a></div>
+    <div class="agent"><img src="レイズ.png" alt="レイズ" /><div class="agent-name">レイズ</div><a href="レイズ.png" download><button class="download-btn">ダウンロード</button></a></div>
+    <div class="agent"><img src="レイナ.PNG" alt="レイナ" /><div class="agent-name">レイナ</div><a href="レイナ.PNG" download><button class="download-btn">ダウンロード</button></a></div>
+  </div>
 </body>
 </html>
