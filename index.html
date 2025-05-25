@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VALORANT エージェントギャラリー</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      background: radial-gradient(circle at top left, #1f1f1f, #0d0d0d);
+      color: #fff;
+      font-family: 'Outfit', sans-serif;
+      margin: 0;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 50px;
+      letter-spacing: 1px;
+      background: linear-gradient(90deg, #ff416c, #ff4b2b);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      gap: 30px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .agent {
+      background-color: #1c1c1c;
+      padding: 15px;
+      border-radius: 15px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 8px rgba(255, 255, 255, 0.05);
+    }
+
+    .agent:hover {
+      transform: translateY(-5px) scale(1.05);
+      box-shadow: 0 8px 16px rgba(255, 255, 255, 0.15);
+    }
+
+    .agent img {
+      width: 100px;
+      border-radius: 10px;
+    }
+
+    .agent-name {
+      margin-top: 10px;
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    .download-btn {
+      margin-top: 8px;
+      background: linear-gradient(135deg, #ff416c, #ff4b2b);
+      color: white;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 0.8rem;
+      transition: opacity 0.2s ease;
+    }
+
+    .download-btn:hover {
+      opacity: 0.85;
+    }
+  </style>
+</head>
+<body>
+  <h1>VALORANT エージェントギャラリー</h1>
+  <div class="gallery" id="gallery"></div>
+
+  <script>
+    const agents = [
+      "KAY-O.png", "アイソ.png", "アストラ.png", "ヴァイス.png", "ヴァイパー.png", "ウェイレイ.png", "オーメン.png",
+      "キルジョイ.png", "クローヴ.png", "ゲッコー.png", "サイファー.png", "ジェット.PNG", "スカイ.PNG", "セージ.PNG",
+      "ソーヴァ.PNG", "チェンバー.png", "デッドロック.PNG", "テホ.png", "ネオン.png", "ハーバー.png", "フェイド.png",
+      "フェニックス.png", "ブリーチ.PNG", "ブリムストーン.png", "ヨル.png", "レイズ.png", "レイナ.PNG"
+    ];
+
+    const gallery = document.getElementById("gallery");
+
+    agents.forEach((name) => {
+      const agentName = name.replace(/\.(png|PNG)$/i, "");
+      const div = document.createElement("div");
+      div.className = "agent";
+      div.innerHTML = `
+        <img src="${name}" alt="${agentName}" />
+        <div class="agent-name">${agentName}</div>
+        <a href="${name}" download>
+          <button class="download-btn">ダウンロード</button>
+        </a>
+      `;
+      gallery.appendChild(div);
+    });
+  </script>
+</body>
+</html>
